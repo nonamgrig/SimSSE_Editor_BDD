@@ -1,4 +1,8 @@
 # SimSSE_Editor_BDD
+Implémentation à l'aide de Strapi de l'API REST pour accéder à la base de données relationnelle PostgreSQL. 
+La base de données est stockée dans une image docker en locale.
+
+
 # 🚀 Getting started with Strapi
 
 Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
