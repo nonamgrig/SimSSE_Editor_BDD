@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bioevents",
+  "info": {
+    "singularName": "bioevent",
+    "pluralName": "bioevents",
+    "displayName": "bioevent",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nom": {
+      "type": "string"
+    },
+    "comparaison": {
+      "type": "string"
+    },
+    "variablephysio": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::variablephysio.variablephysio"
+    },
+    "valeur": {
+      "type": "decimal"
+    }
+  }
+}

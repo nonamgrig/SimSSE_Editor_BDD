@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trends",
+  "info": {
+    "singularName": "trend",
+    "pluralName": "trends",
+    "displayName": "trend",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "valeur": {
+      "type": "decimal"
+    },
+    "cible": {
+      "type": "decimal"
+    },
+    "x": {
+      "type": "decimal"
+    },
+    "y": {
+      "type": "decimal"
+    },
+    "variablephysio": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::variablephysio.variablephysio"
+    },
+    "nom": {
+      "type": "string"
+    }
+  }
+}

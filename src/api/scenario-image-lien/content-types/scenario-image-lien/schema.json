@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "scenario_image_liens",
+  "info": {
+    "singularName": "scenario-image-lien",
+    "pluralName": "scenario-image-liens",
+    "displayName": "scenario-image-lien"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "couverture": {
+      "type": "boolean"
+    },
+    "scenario": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::scenario.scenario"
+    },
+    "image": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::image.image"
+    }
+  }
+}

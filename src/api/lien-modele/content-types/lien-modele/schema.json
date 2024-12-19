@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lien_modeles",
+  "info": {
+    "singularName": "lien-modele",
+    "pluralName": "lien-modeles",
+    "displayName": "instance-modele",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "x": {
+      "type": "decimal"
+    },
+    "y": {
+      "type": "decimal"
+    },
+    "type_lien_event": {
+      "type": "string"
+    },
+    "event": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::event.event"
+    },
+    "modele": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::modele.modele"
+    }
+  }
+}

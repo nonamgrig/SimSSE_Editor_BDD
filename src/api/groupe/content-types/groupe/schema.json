@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "groupes",
+  "info": {
+    "singularName": "groupe",
+    "pluralName": "groupes",
+    "displayName": "groupe",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "EU": {
+      "type": "integer",
+      "default": 0
+    },
+    "scene": {
+      "type": "integer",
+      "default": 1
+    },
+    "UA": {
+      "type": "integer",
+      "default": 0
+    },
+    "UR": {
+      "type": "integer",
+      "default": 0
+    },
+    "psy": {
+      "type": "integer",
+      "default": 0
+    },
+    "implique": {
+      "type": "integer",
+      "default": 0
+    },
+    "t0": {
+      "type": "integer",
+      "default": 0
+    },
+    "x": {
+      "type": "decimal"
+    },
+    "y": {
+      "type": "decimal"
+    },
+    "decede": {
+      "type": "integer",
+      "default": 0
+    },
+    "scenario": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::scenario.scenario"
+    }
+  }
+}

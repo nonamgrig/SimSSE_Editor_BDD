@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "event_trend_liens",
+  "info": {
+    "singularName": "event-trend-lien",
+    "pluralName": "event-trend-liens",
+    "displayName": "event-trend-lien"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "string"
+    },
+    "event": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::event.event"
+    },
+    "trend": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::trend.trend"
+    }
+  }
+}

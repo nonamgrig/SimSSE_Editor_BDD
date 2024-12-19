@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "images",
+  "info": {
+    "singularName": "image",
+    "pluralName": "images",
+    "displayName": "image"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "src": {
+      "type": "text"
+    },
+    "modeles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::modele.modele",
+      "mappedBy": "images"
+    }
+  }
+}

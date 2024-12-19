@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "variablephysios",
+  "info": {
+    "singularName": "variablephysio",
+    "pluralName": "variablephysios",
+    "displayName": "variablephysio"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nom": {
+      "type": "string"
+    },
+    "nom_complet": {
+      "type": "string"
+    },
+    "valeur_defaut": {
+      "type": "decimal"
+    },
+    "min": {
+      "type": "decimal"
+    },
+    "max": {
+      "type": "decimal"
+    },
+    "color": {
+      "type": "string"
+    }
+  }
+}

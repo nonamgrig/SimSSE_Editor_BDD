@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "variablephysio_profils",
+  "info": {
+    "singularName": "variablephysio-profil",
+    "pluralName": "variablephysio-profils",
+    "displayName": "variablephysio-profil",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "valeur_defaut": {
+      "type": "decimal"
+    },
+    "min": {
+      "type": "decimal"
+    },
+    "max": {
+      "type": "decimal"
+    },
+    "variablephysio": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::variablephysio.variablephysio"
+    },
+    "profils": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::profil.profil",
+      "inversedBy": "variablephysio_profils"
+    }
+  }
+}

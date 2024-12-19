@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "actions",
+  "info": {
+    "singularName": "action",
+    "pluralName": "actions",
+    "displayName": "action"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "med": {
+      "type": "boolean"
+    },
+    "paramed": {
+      "type": "boolean"
+    },
+    "secouriste": {
+      "type": "boolean"
+    },
+    "categorie": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::categorie.categorie"
+    }
+  }
+}

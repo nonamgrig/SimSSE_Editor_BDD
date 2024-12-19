@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "event",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "string"
+    },
+    "x": {
+      "type": "decimal"
+    },
+    "y": {
+      "type": "decimal"
+    },
+    "action": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::action.action"
+    },
+    "modele": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::modele.modele"
+    },
+    "bioevent": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::bioevent.bioevent"
+    }
+  }
+}

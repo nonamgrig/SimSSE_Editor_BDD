@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "plastrons",
+  "info": {
+    "singularName": "plastron",
+    "pluralName": "plastrons",
+    "displayName": "plastron"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "statut": {
+      "type": "string"
+    },
+    "groupe": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::groupe.groupe"
+    },
+    "profil": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::profil.profil"
+    },
+    "modele": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::modele.modele"
+    }
+  }
+}

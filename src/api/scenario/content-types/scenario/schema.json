@@ -1,0 +1,78 @@
+{
+  "kind": "collectionType",
+  "collectionName": "scenarios",
+  "info": {
+    "singularName": "scenario",
+    "pluralName": "scenarios",
+    "displayName": "scenario",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titre": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "EU": {
+      "type": "integer",
+      "default": 0
+    },
+    "UA": {
+      "type": "integer",
+      "default": 0
+    },
+    "UR": {
+      "type": "integer",
+      "default": 0
+    },
+    "psy": {
+      "type": "integer",
+      "default": 0
+    },
+    "implique": {
+      "type": "integer",
+      "default": 0
+    },
+    "decede": {
+      "type": "integer",
+      "default": 0
+    },
+    "duree": {
+      "type": "integer",
+      "default": 100
+    },
+    "statut": {
+      "type": "boolean"
+    },
+    "prvx": {
+      "type": "decimal"
+    },
+    "prvy": {
+      "type": "decimal"
+    },
+    "pmax": {
+      "type": "decimal"
+    },
+    "pmay": {
+      "type": "decimal"
+    },
+    "cadix": {
+      "type": "decimal"
+    },
+    "cadiy": {
+      "type": "decimal"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "mappedBy": "scenarios"
+    }
+  }
+}
