@@ -732,6 +732,7 @@ export interface ApiScenarioImageLienScenarioImageLien
   extends Struct.CollectionTypeSchema {
   collectionName: 'scenario_image_liens';
   info: {
+    description: '';
     displayName: 'scenario-image-lien';
     pluralName: 'scenario-image-liens';
     singularName: 'scenario-image-lien';
@@ -740,7 +741,6 @@ export interface ApiScenarioImageLienScenarioImageLien
     draftAndPublish: true;
   };
   attributes: {
-    couverture: Schema.Attribute.Boolean;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -752,6 +752,7 @@ export interface ApiScenarioImageLienScenarioImageLien
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    role: Schema.Attribute.String;
     scenario: Schema.Attribute.Relation<'oneToOne', 'api::scenario.scenario'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
