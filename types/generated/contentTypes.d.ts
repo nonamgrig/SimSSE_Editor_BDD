@@ -372,6 +372,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiActionAction extends Struct.CollectionTypeSchema {
   collectionName: 'actions';
   info: {
+    description: '';
     displayName: 'action';
     pluralName: 'actions';
     singularName: 'action';
@@ -394,7 +395,7 @@ export interface ApiActionAction extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     med: Schema.Attribute.Boolean;
-    name: Schema.Attribute.String;
+    nom: Schema.Attribute.String;
     paramed: Schema.Attribute.Boolean;
     publishedAt: Schema.Attribute.DateTime;
     secouriste: Schema.Attribute.Boolean;
@@ -442,6 +443,7 @@ export interface ApiBioeventBioevent extends Struct.CollectionTypeSchema {
 export interface ApiCategorieCategorie extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
+    description: '';
     displayName: 'categorie';
     pluralName: 'categories';
     singularName: 'categorie';
@@ -459,7 +461,7 @@ export interface ApiCategorieCategorie extends Struct.CollectionTypeSchema {
       'api::categorie.categorie'
     > &
       Schema.Attribute.Private;
-    name: Schema.Attribute.String;
+    nom: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -490,6 +492,7 @@ export interface ApiEventTrendLienEventTrendLien
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    timer: Schema.Attribute.Decimal;
     trend: Schema.Attribute.Relation<'oneToOne', 'api::trend.trend'>;
     type: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -520,6 +523,8 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     modele: Schema.Attribute.Relation<'oneToOne', 'api::modele.modele'>;
     publishedAt: Schema.Attribute.DateTime;
+    time: Schema.Attribute.Decimal;
+    trigger: Schema.Attribute.Boolean;
     type: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
