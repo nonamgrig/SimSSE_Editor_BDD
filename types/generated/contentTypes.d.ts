@@ -576,6 +576,7 @@ export interface ApiGroupeGroupe extends Struct.CollectionTypeSchema {
 export interface ApiImageImage extends Struct.CollectionTypeSchema {
   collectionName: 'images';
   info: {
+    description: '';
     displayName: 'image';
     pluralName: 'images';
     singularName: 'image';
@@ -649,6 +650,7 @@ export interface ApiModeleModele extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
+    description_cachee: Schema.Attribute.Text;
     examen: Schema.Attribute.Text;
     images: Schema.Attribute.Relation<'manyToMany', 'api::image.image'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -661,6 +663,7 @@ export interface ApiModeleModele extends Struct.CollectionTypeSchema {
     statut: Schema.Attribute.Boolean;
     symptome: Schema.Attribute.Boolean;
     tags: Schema.Attribute.Relation<'manyToMany', 'api::tag.tag'>;
+    template: Schema.Attribute.Boolean;
     titre: Schema.Attribute.String;
     triage: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -777,6 +780,7 @@ export interface ApiScenarioScenario extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    afficherHistorique: Schema.Attribute.Boolean;
     cadix: Schema.Attribute.Decimal;
     cadiy: Schema.Attribute.Decimal;
     createdAt: Schema.Attribute.DateTime;
@@ -917,6 +921,7 @@ export interface ApiVariablephysioVariablephysio
   extends Struct.CollectionTypeSchema {
   collectionName: 'variablephysios';
   info: {
+    description: '';
     displayName: 'variablephysio';
     pluralName: 'variablephysios';
     singularName: 'variablephysio';
@@ -943,7 +948,7 @@ export interface ApiVariablephysioVariablephysio
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    valeur_defaut: Schema.Attribute.Decimal;
+    valeur_defaut: Schema.Attribute.Decimal & Schema.Attribute.DefaultTo<0>;
   };
 }
 

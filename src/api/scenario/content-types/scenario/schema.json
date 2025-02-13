@@ -73,6 +73,9 @@
       "relation": "manyToMany",
       "target": "api::tag.tag",
       "mappedBy": "scenarios"
+    },
+    "afficherHistorique": {
+      "type": "boolean"
     }
   }
 }

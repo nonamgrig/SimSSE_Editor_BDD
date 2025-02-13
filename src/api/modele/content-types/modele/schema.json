@@ -41,6 +41,12 @@
       "relation": "manyToMany",
       "target": "api::image.image",
       "inversedBy": "modeles"
+    },
+    "template": {
+      "type": "boolean"
+    },
+    "description_cachee": {
+      "type": "text"
     }
   }
 }
