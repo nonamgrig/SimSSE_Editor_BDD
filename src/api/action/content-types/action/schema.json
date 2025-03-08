@@ -28,10 +28,6 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::categorie.categorie"
-    },
-    "index": {
-      "type": "integer",
-      "unique": true
     }
   }
 }
