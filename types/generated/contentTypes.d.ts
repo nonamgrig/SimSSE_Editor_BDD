@@ -388,6 +388,7 @@ export interface ApiActionAction extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    index: Schema.Attribute.Integer & Schema.Attribute.Unique;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -455,6 +456,7 @@ export interface ApiCategorieCategorie extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    index: Schema.Attribute.Integer & Schema.Attribute.Unique;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -675,6 +677,7 @@ export interface ApiModeleModele extends Struct.CollectionTypeSchema {
 export interface ApiPlastronPlastron extends Struct.CollectionTypeSchema {
   collectionName: 'plastrons';
   info: {
+    description: '';
     displayName: 'plastron';
     pluralName: 'plastrons';
     singularName: 'plastron';
@@ -688,6 +691,7 @@ export interface ApiPlastronPlastron extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
     groupe: Schema.Attribute.Relation<'oneToOne', 'api::groupe.groupe'>;
+    index: Schema.Attribute.Integer;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

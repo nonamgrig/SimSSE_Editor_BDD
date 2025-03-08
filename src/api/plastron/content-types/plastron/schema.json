@@ -4,7 +4,8 @@
   "info": {
     "singularName": "plastron",
     "pluralName": "plastrons",
-    "displayName": "plastron"
+    "displayName": "plastron",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -31,6 +32,9 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::modele.modele"
+    },
+    "index": {
+      "type": "integer"
     }
   }
 }
