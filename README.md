@@ -22,7 +22,6 @@ Le backend de l'application SimSSE est construit avec Strapi et interagit avec u
 
 ### Liens utiles
 
-- **[Documentation complète Développeur](Documentation/documentation_compodoc/index.html)**
 - **[Page GitHub du projet frontend](https://github.com/nonamgrig/SimSSE_Editor)**
 - **[Page GitHub du projet backend](https://github.com/nonamgrig/SimSSE_Editor_BDD)**
 - **[Guide d'installation](Documentation/installation/installation.md)**
