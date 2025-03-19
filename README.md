@@ -1,66 +1,113 @@
-# SimSSE_Editor_BDD
-Implémentation à l'aide de Strapi de l'API REST pour accéder à la base de données relationnelle PostgreSQL. 
-La base de données est stockée dans une image docker en locale.
+## SimSSE - Backend
 
-
-# 🚀 Getting started with Strapi
-
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
-
-### `develop`
-
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
-
-```
-npm run develop
-# or
-yarn develop
-```
-
-### `start`
-
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
-
-```
-npm run start
-# or
-yarn start
-```
-
-### `build`
-
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
-
-```
-npm run build
-# or
-yarn build
-```
-
-## ⚙️ Deployment
-
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
-
-```
-yarn strapi deploy
-```
-
-## 📚 Learn more
-
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
-
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
-
-## ✨ Community
-
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
+Le projet SimSSE du Centre Hospitalier Universitaire (CHU) de Nantes a pour objectif de développer une application web pour la gestion de scénarios d'exercices de secours dans des Situations Sanitaires Exceptionnelles (SSE). Cette application doit permettre la génération, la gestion et la modification en temps réel des scénarios, tout en étant reliée à une nouvelle base de données PostgreSQL et au backend Strapi.
 
 ---
 
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+### Présentation du backend
+
+Le backend de l'application SimSSE est construit avec Strapi et interagit avec une base de données PostgreSQL hébergée dans un container Docker. Il est responsable de la gestion des données et des interactions entre le frontend et la base de données, permettant la gestion des scénarios d'exercices en temps réel.
+
+---
+
+### Précisions sur le projet
+
+- La base de données est hébergée et accessible à l'aide d'un container Docker.
+- La documentation utilisateur est disponible sur le repository.
+- La documentation développeur est disponible dans le dossier documentation_compodoc sous la forme d'une application WEB avec comme page d'accueil index.html.
+- Le code est commenté, sa structure est à explorer dans la documentation.
+- La base de données est une base de données relationnelle PostgreSQL exploitée par l'application backend via Strapi.
+
+---
+
+### Liens utiles
+
+- **[Documentation complète Développeur](Documentation/documentation_compodoc/index.html)**
+- **[Page GitHub du projet frontend](https://github.com/nonamgrig/SimSSE_Editor)**
+- **[Page GitHub du projet backend](https://github.com/nonamgrig/SimSSE_Editor_BDD)**
+- **[Guide d'installation](Documentation/installation/installation.md)**
+- **[Documentation Strapi](https://strapi.io/)**
+
+---
+
+### Installation du backend
+
+Clonez ce dépôt sur votre machine locale et installez les dépendances nécessaires :
+
+```bash
+git clone https://github.com/nonamgrig/SimSSE_Editor_BDD.git
+cd SimSSE_Editor_BDD
+npm install
+```
+
+### Lancement du backend
+
+Le backend peut être démarré de deux manières :
+
+#### 1. Via Node.js
+
+Démarrez le serveur Strapi en mode développement :
+
+```bash
+npm run develop
+```
+
+Démarrage en mode production :
+
+```bash
+npm run build
+npm start
+```
+
+#### 2. Via Docker
+
+Si vous souhaitez exécuter le backend dans un container Docker, suivez ces étapes :
+
+1. Assurez-vous que Docker est installé et en cours d'exécution.
+2. Exécutez la commande suivante pour construire et exécuter le container :
+
+```bash
+docker-compose up -d
+```
+
+---
+
+### Installation de la base de données
+
+Le backend utilise PostgreSQL comme base de données. Pour configurer la base de données, procédez comme suit :
+
+1. **Création du container PostgreSQL** :
+
+   ```bash
+   docker run --name strapi_postgres \
+     -e POSTGRES_USER=simsse \
+     -e POSTGRES_PASSWORD=simsse \
+     -e POSTGRES_DB=simsse \
+     -p 5434:5432 -d postgres
+   ```
+
+2. **Importation du fichier dump.sql** :
+
+   ```bash
+   docker cp dump.sql strapi_postgres:/dump.sql
+   docker exec -it strapi_postgres psql -U simsse -d simsse -f /dump.sql
+   ```
+
+La base de données est maintenant opérationnelle.
+
+---
+
+### Accès à l'interface Strapi
+
+Une fois le backend en cours d'exécution, vous pouvez accéder à l'interface Strapi via :
+
+[http://localhost:1337/admin](http://localhost:1337/admin)
+
+Dans **Settings -> Roles**, double-cliquez sur **public** et activez "Select All" pour tous les éléments afin de permettre l'accès aux données.
+
+---
+
+### Aide supplémentaire
+
+Pour plus d'informations sur Strapi, vous pouvez consulter la [documentation officielle](https://strapi.io/).
+
