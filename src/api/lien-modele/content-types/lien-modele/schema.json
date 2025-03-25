@@ -18,7 +18,7 @@
     "y": {
       "type": "decimal"
     },
-    "type_lien_event": {
+    "type": {
       "type": "string"
     },
     "event": {
@@ -30,6 +30,9 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::modele.modele"
+    },
+    "timer": {
+      "type": "integer"
     }
   }
 }

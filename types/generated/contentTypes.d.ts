@@ -626,7 +626,8 @@ export interface ApiLienModeleLienModele extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     modele: Schema.Attribute.Relation<'oneToOne', 'api::modele.modele'>;
     publishedAt: Schema.Attribute.DateTime;
-    type_lien_event: Schema.Attribute.String;
+    timer: Schema.Attribute.Integer;
+    type: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
